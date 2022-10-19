@@ -1,4 +1,28 @@
 
-.card {
+.card.rating {
+    display: grid;
+}
 
+.logo-star {
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    background-color: var(--Medium-Grey);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/icon-star.svg);
+}
+
+.rating-container .rating__btn {
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    border-width: 0px;
+}
+
+.submit-btn {
+    height: 42px;
+    border-radius: 21px;
+    border-width: 0px;
+    background-color: var(--Orange);
 }

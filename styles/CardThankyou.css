@@ -1,4 +1,6 @@
 
-.thankyou {
-
+.card.thankyou {
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    display: none;
 }
