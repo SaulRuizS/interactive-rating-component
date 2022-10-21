@@ -1,28 +1,75 @@
 
 .card.rating {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+}
+
+.card.rating .title {
+    margin-bottom: 14px;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .logo-star {
-    height: 38px;
-    width: 38px;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 20px;
     border-radius: 50%;
-    background-color: var(--Medium-Grey);
+    background-color: var(--Dark-Blue);
     background-repeat: no-repeat;
     background-position: center;
     background-image: url(../images/icon-star.svg);
 }
 
+.card.rating .text {
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+.rating-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
 .rating-container .rating__btn {
-    height: 38px;
-    width: 38px;
+    height: 44px;
+    width: 44px;
     border-radius: 50%;
     border-width: 0px;
+    color: var(--Medium-Grey);
+    background-color: var(--Dark-Blue);
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.rating__btn:hover {
+    background-color: var(--Orange);
+    color: var(--White);
+    transition: 100ms;
+}
+
+.rating__btn:active {
+    background-color: var(--Medium-Grey);
+    color: var(--White);
+    transition: 100ms;
 }
 
 .submit-btn {
-    height: 42px;
-    border-radius: 21px;
+    height: 44px;
+    border-radius: 22px;
     border-width: 0px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--White);
     background-color: var(--Orange);
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    color: var(--Orange);
+    background-color: var(--White);
+    transition: 100ms;
 }
