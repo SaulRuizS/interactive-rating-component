@@ -1,6 +1,7 @@
 
 .card.rating {
-    display: flex;
+    display: none;
+    /* display: flex; */
     flex-direction: column;
 }
 

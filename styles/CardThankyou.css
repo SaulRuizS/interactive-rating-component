@@ -1,6 +1,35 @@
 
 .card.thankyou {
-    /* opacity: 0; */
-    /* visibility: hidden; */
-    display: none;
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-thankyou {
+    height: 100px;
+    margin-bottom: 26px;
+}
+
+.selection {
+    height: 36px;
+    width: 166px;
+    border-radius: 18px;
+    margin-bottom: 26px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--Orange);
+    background-color: var(--Dark-Blue);
+}
+
+.card.thankyou .title {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.card.thankyou .text {
+    margin-bottom: 8px;
+    line-height: 22px;
 }
