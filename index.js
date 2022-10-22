@@ -1,25 +1,32 @@
 
+const cardRating = document.querySelector('.card.rating');
+const logoStar = document.querySelector('.logo-star');
+const titleRating = document.querySelector('.card.rating .title');
+const textRating = document.querySelector('.card.rating .text');
+const ratingContainer = document.querySelector('.rating-container');
+const ratingButtons = document.querySelectorAll('.rating__btn');
+const submitBtn = document.querySelector('.submit-btn');
+const thankyouCard = document.querySelector('.card.thankyou');
 
-// <!-- Rating state start -->
+ratingButtons.forEach((button) => {
 
-// How did we do?
 
-// Please let us know how we did with your support request. All feedback is appreciated 
-// to help us improve our offering!
+    button.addEventListener('click',() => {
 
-// 1 2 3 4 5
+        console.log(button.innerHTML);
+        
+        if(button.className !== 'active') {
+            button.className = 'active';
+        }
+        else {
+            button.className = 'rating__btn';
+        }
+        
+    }, false);
+})
 
-// Submit
-
-// <!-- Rating state end -->
-
-// <!-- Thank you state start -->
-
-// You selected <!-- Add rating here --> out of 5
-
-// Thank you!
-
-// We appreciate you taking the time to give a rating. If you ever need more support, 
-// don’t hesitate to get in touch!
-
-// <!-- Thank you state end -->
+submitBtn.addEventListener('click', () => {
+    console.log('test')
+    cardRating.style.display = 'none';
+    thankyouCard.style.display = 'flex';
+}, false);

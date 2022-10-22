@@ -33,15 +33,18 @@
     margin-bottom: 24px;
 }
 
-.rating-container .rating__btn {
+.rating-container .rating__btn, .active {
     height: 44px;
     width: 44px;
     border-radius: 50%;
     border-width: 0px;
+    cursor: pointer;
+}
+
+.rating-container .rating__btn {
     color: var(--Medium-Grey);
     background-color: var(--Dark-Blue);
     transition: 100ms;
-    cursor: pointer;
 }
 
 .rating__btn:hover {
@@ -50,7 +53,7 @@
     transition: 100ms;
 }
 
-.rating__btn:active {
+.active {
     background-color: var(--Medium-Grey);
     color: var(--White);
     transition: 100ms;

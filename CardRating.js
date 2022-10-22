@@ -1,0 +1,1 @@
+const cardRating = document.querySelector('.card.rating');
