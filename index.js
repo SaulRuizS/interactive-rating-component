@@ -8,25 +8,30 @@ const ratingButtons = document.querySelectorAll('.rating__btn');
 const submitBtn = document.querySelector('.submit-btn');
 const thankyouCard = document.querySelector('.card.thankyou');
 
-ratingButtons.forEach((button) => {
+let activeBtn = undefined;
+let prevBtn = undefined;
 
+for (let index = 0; index < ratingButtons.length; index++) {
 
-    button.addEventListener('click',() => {
+    const ratingBtn = ratingButtons[index];
 
-        console.log(button.innerHTML);
-        
-        if(button.className !== 'active') {
-            button.className = 'active';
+    ratingBtn.addEventListener('click',() => {
+
+        if(ratingBtn.className !== 'active' && prevBtn !== index) {
+            prevBtn = activeBtn
+            activeBtn = index;
+            // ratingButtons[prevBtn].className = 'rating__btn';
+            console.log(prevBtn);
+            ratingBtn.className = 'active';
         }
         else {
-            button.className = 'rating__btn';
+            ratingBtn.className = 'rating__btn';
         }
         
     }, false);
-})
+}
 
 submitBtn.addEventListener('click', () => {
-    console.log('test')
     cardRating.style.display = 'none';
     thankyouCard.style.display = 'flex';
 }, false);
