@@ -1,15 +1,13 @@
 
-const cardRating = document.querySelector('.card.rating');
-const logoStar = document.querySelector('.logo-star');
-const titleRating = document.querySelector('.card.rating .title');
-const textRating = document.querySelector('.card.rating .text');
-const ratingContainer = document.querySelector('.rating-container');
+const cardRating = document.querySelector('.card.rating')
 const ratingButtons = document.querySelectorAll('.rating__btn');
 const submitBtn = document.querySelector('.submit-btn');
 const thankyouCard = document.querySelector('.card.thankyou');
+const rateOfFive = document.querySelector('.selection span');
 
-let activeBtn = undefined;
-let prevBtn = undefined;
+let activeBtn = 0;
+let prevBtn = 0;
+let rating = 0;
 
 for (let index = 0; index < ratingButtons.length; index++) {
 
@@ -17,21 +15,25 @@ for (let index = 0; index < ratingButtons.length; index++) {
 
     ratingBtn.addEventListener('click',() => {
 
-        if(ratingBtn.className !== 'active' && prevBtn !== index) {
-            prevBtn = activeBtn
-            activeBtn = index;
-            // ratingButtons[prevBtn].className = 'rating__btn';
-            console.log(prevBtn);
+        activeBtn = index;
+
+        if (ratingBtn.className !== 'active' && activeBtn !== prevBtn) {
+            ratingButtons[prevBtn].className = 'rating__btn';
+            prevBtn = activeBtn;
+            ratingBtn.className = 'active';
+        } else if (activeBtn === 0) {
+            prevBtn = activeBtn;
             ratingBtn.className = 'active';
         }
-        else {
-            ratingBtn.className = 'rating__btn';
-        }
-        
+
+        rating = ratingBtn.innerHTML;
+        console.log(rating);
+
     }, false);
 }
 
 submitBtn.addEventListener('click', () => {
     cardRating.style.display = 'none';
     thankyouCard.style.display = 'flex';
+    rateOfFive.innerHTML = rating;
 }, false);
